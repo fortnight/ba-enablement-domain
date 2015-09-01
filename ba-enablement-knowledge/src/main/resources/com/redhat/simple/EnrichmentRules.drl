@@ -9,7 +9,7 @@ ruleflow-group "enrichment"
 dialect "mvel"
 
 	when
-		$business : Business( zipCode == "10002" , federalTaxId == "98765" )
+		$business : Business( $zc : zipCode != null , $fti : federalTaxId != null )
 	then
-		modify ($business) { setFederalTaxId("98765-10002") };
+		$business.setFederalTaxId($fti + "-" + $zc);
 end
