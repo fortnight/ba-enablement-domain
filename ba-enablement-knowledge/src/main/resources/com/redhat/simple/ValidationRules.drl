@@ -16,3 +16,107 @@ dialect "mvel"
 		reason.setReasonMessage( "non-Kansas business validated" );
 		insert ( reason );
 end
+
+rule "Empty name Field"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business( name == null )
+	then
+		insert ( new String( "error" ) );
+		Reason reason = new Reason();
+		reason.setReasonMessage( "name field is empty" );
+		insert ( reason );
+end
+
+rule "Empty addressline1 Field"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business( addressLine1 == null )
+	then
+		insert ( new String( "error" ) );
+		Reason reason = new Reason();
+		reason.setReasonMessage( "addressline1 field is empty" );
+		insert ( reason );
+end
+
+rule "Empty addressline2 Field"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business( addressLine2 == null )
+	then
+		insert ( new String( "error" ) );
+		Reason reason = new Reason();
+		reason.setReasonMessage( "addressline2 field is empty" );
+		insert ( reason );
+end
+
+rule "Empty phoneNumber Field"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business( phoneNumber == null )
+	then
+		insert ( new String( "error" ) );
+		Reason reason = new Reason();
+		reason.setReasonMessage( "phoneNumber field is empty" );
+		insert ( reason );
+end
+
+rule "Empty city Field"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business( city == null )
+	then
+		insert ( new String( "error" ) );
+		Reason reason = new Reason();
+		reason.setReasonMessage( "city field is empty" );
+		insert ( reason );
+end
+
+rule "Empty stateCode Field"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business( stateCode == null )
+	then
+		insert ( new String( "error" ) );
+		Reason reason = new Reason();
+		reason.setReasonMessage( "stateCode field is empty" );
+		insert ( reason );
+end
+
+rule "Empty zipCode Field"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business( zipCode == null )
+	then
+		insert ( new String( "error" ) );
+		Reason reason = new Reason();
+		reason.setReasonMessage( "zipCode field is empty" );
+		insert ( reason );
+end
+
+rule "Empty federalTaxId Field"
+ruleflow-group "validation"
+dialect "mvel"
+
+	when
+		$business : Business( federalTaxId == null )
+	then
+		insert ( new String( "error" ) );
+		Reason reason = new Reason();
+		reason.setReasonMessage( "fedralTaxId field is empty" );
+		insert ( reason );
+end
