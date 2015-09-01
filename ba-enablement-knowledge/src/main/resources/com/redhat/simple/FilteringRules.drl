@@ -16,16 +16,3 @@ dialect "mvel"
 		reason.setReasonMessage( "business filtered from Kansas not found" );
 		insert ( reason );
 end
-
-rule "Process non-Kansas"
-ruleflow-group "Filtering"
-dialect "mvel"
-
-	when
-		$business : Business( stateCode != "KS" )
-	then
-		insert ( new String( "validated" ) );
-		Reason reason = new Reason();
-		reason.setReasonMessage( "non-Kansas business validated" );
-		insert ( reason );
-end
