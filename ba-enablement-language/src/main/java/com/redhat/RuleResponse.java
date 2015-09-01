@@ -6,10 +6,13 @@ public class RuleResponse {
 
 	@KieQuery(binding = "$business", queryName = "Get Business")
 	private Business business;
-	
-	private String responseCode; // e.g. success, failure, filtered, validation error...
-	
-	private Collection<Reason> reasons; // messages about why the response Code came bacl
+
+	@KieQuery(binding = "$response", queryName = "Get Response Code")
+	private String responseCode; // e.g. success, failure, filtered, validation
+									// error...
+	@KieQuery(binding = "$reasons", queryName = "Get Reason Messages")
+	private Collection<Reason> reasons; // messages about why the response Code
+										// came bacl
 
 	public Business getBusiness() {
 		return business;
@@ -19,20 +22,20 @@ public class RuleResponse {
 		this.business = business;
 	}
 
-	public Collection<Reason> getReasons() {
-		return reasons;
-	}
-
-	public void setReasons(Collection<Reason> reasons) {
-		this.reasons = reasons;
-	}
-
 	public String getResponseCode() {
 		return responseCode;
 	}
 
 	public void setResponseCode(String responseCode) {
 		this.responseCode = responseCode;
+	}
+
+	public Collection<Reason> getReasons() {
+		return reasons;
+	}
+
+	public void setReasons(Collection<Reason> reasons) {
+		this.reasons = reasons;
 	}
 
 }
