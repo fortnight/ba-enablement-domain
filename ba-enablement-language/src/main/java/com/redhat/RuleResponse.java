@@ -19,4 +19,20 @@ public class RuleResponse {
 		this.business = business;
 	}
 
+	public String getResponseCode() {
+		return responseCode;
+	}
+
+	public void setResponseCode(String responseCode) {
+		this.responseCode = responseCode;
+	}
+
+	public Collection<Reason> getReasons() {
+		return reasons;
+	}
+
+	public void setReasons(Collection<Reason> reasons) {
+		this.reasons = reasons;
+	}
+
 }
