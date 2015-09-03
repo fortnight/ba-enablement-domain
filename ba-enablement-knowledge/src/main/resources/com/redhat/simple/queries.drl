@@ -8,8 +8,14 @@ query "Get Business"
 	
 end
 
-query "Get Reasons"
+query "Get Response Code"
 	
-	$reason : Reason()
+	$response : String()
+	
+end
+
+query "Get Reason Messages"
+	
+	$reasons : Reason()
 	
 end
