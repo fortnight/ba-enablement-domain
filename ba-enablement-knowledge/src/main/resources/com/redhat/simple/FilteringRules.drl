@@ -1,0 +1,18 @@
+package com.redhat;
+
+import com.redhat.Business;
+import com.redhat.RuleResponse;
+import com.redhat.Reason;
+
+rule "Filter From Kansas"
+ruleflow-group "Filtering"
+dialect "mvel"
+
+	when
+		$business : Business( stateCode == "KS" )
+	then
+		insert ( new String( "filtered" ) );
+		Reason reason = new Reason();
+		reason.setReasonMessage( "business filtered from Kansas not found" );
+		insert ( reason );
+end
