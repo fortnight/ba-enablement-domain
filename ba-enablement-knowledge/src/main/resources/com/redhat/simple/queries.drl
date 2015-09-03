@@ -7,3 +7,9 @@ query "Get Business"
 	$business : Business()
 	
 end
+
+query "Get Reasons"
+	
+	$reason : Reason()
+	
+end

@@ -8,7 +8,8 @@ public class RuleResponse {
 	private Business business;
 	
 	private String responseCode; // e.g. success, failure, filtered, validation error...
-	
+
+	@KieQuery(binding = "$reason", queryName = "Get Reasons")	
 	private Collection<Reason> reasons; // messages about why the response Code came bacl
 
 	public Business getBusiness() {

@@ -5,13 +5,14 @@ import com.redhat.RuleResponse;
 import com.redhat.Reason;
 
 rule "Filter From Kansas"
-ruleflow-group "Filtering"
+ruleflow-group "filtering"
 dialect "mvel"
 
 	when
 		$business : Business( stateCode == "KS" )
 	then
 		insert ( new String( "filtered" ) );
+		System.out.println("WOMP");
 		Reason reason = new Reason();
 		reason.setReasonMessage( "business filtered from Kansas not found" );
 		insert ( reason );
